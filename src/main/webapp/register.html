@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký khóa học</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .subjects-label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .gender-options input {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 15px;
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Đăng Ký Khóa Học</h2>
+    <form action="register" method="POST">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label>Giới tính:</label>
+        <div class="gender-options">
+            <input type="radio" name="gender" value="Nam" checked> Nam
+            <input type="radio" name="gender" value="Nữ"> Nữ
+        </div><br>
+
+        <label>Chọn môn học:</label><br>
+        <label class="subjects-label"><input type="checkbox" name="subjects" value="Toán"> Toán</label><br>
+        <label class="subjects-label"><input type="checkbox" name="subjects" value="Lý"> Lý</label><br>
+        <label class="subjects-label"><input type="checkbox" name="subjects" value="Hóa"> Hóa</label><br>
+        <label class="subjects-label"><input type="checkbox" name="subjects" value="Tin học"> Tin học</label><br><br>
+
+        <input type="submit" value="Đăng ký">
+    </form>
+</div>
+
+</body>
+</html>

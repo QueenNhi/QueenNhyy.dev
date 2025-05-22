@@ -1,7 +1,76 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <!-- Cấu hình Servlet -->
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>BaiThucHanh.HelloServlet</servlet-class>
+  </servlet>
+
+  <!-- Ánh xạ Servlet với URL pattern mới -->
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/greeting</url-pattern>
+  </servlet-mapping>
+
+
+<!--Ánh xạ LifeCycleServlet-->
+  <servlet>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>BaiThucHanh.LifeCycleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/lifecycle</url-pattern>
+  </servlet-mapping>
+
+  <!-- Cấu hình Servlet WelcomeServlet -->
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>BaiThucHanh.WelcomeServlet</servlet-class>
+  </servlet>
+
+  <!-- Ánh xạ Servlet WelcomeServlet tới /welcome -->
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+
+  <!-- Cấu hình Servlet RegisterServlet -->
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>BaiThucHanh.RegisterServlet</servlet-class>
+  </servlet>
+<!--Ánh xạ Servlet RegisterServlet-->
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+  <!--Cấu hình Servlet InfoServlet-->
+  <servlet>
+    <servlet-name>InfoServlet</servlet-name>
+    <servlet-class>BaiThucHanh.InfoServlet</servlet-class>
+    <init-param>
+      <param-name>companyName</param-name>
+      <param-value>OpenAI Vietnam</param-value>
+    </init-param>
+    <init-param>
+      <param-name>website</param-name>
+      <param-value>https://www.openai.com/vi</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>InfoServlet</servlet-name>
+    <url-pattern>/info</url-pattern>
+  </servlet-mapping>
+
+
+
 </web-app>
